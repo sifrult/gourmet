@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS gourmet_db;
+CREATE DATABASE gourmet_db;
