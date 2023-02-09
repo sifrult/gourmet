@@ -13,13 +13,6 @@ Tag.init(
       },
       tag_name: {
         type: DataTypes.STRING
-      },
-      recipe_id: {
-        type: DataTypes.INTEGER,
-        references: {
-            model: 'recipe',
-            key: 'id'
-        }
       }
     },
     {
