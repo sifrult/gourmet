@@ -31,18 +31,21 @@ Tag.belongsToMany(Recipe, {
 });
 
 // Relationship between Recipe and Ingredient
-Recipe.belongsToMany(Ingredient, {
-    through: {
-        model: RecipeExtras,
-        unique: false
-    }
+Recipe.hasMany(Ingredient, {
+    foreignKey: 'recipe_id',
+    onDelete: 'CASCADE'
+    // through: {
+    //     model: RecipeExtras,
+    //     unique: false
+    // }
 });
 
-Ingredient.belongsToMany(Recipe, {
-    through: {
-        model: RecipeExtras,
-        unique: false
-    }
+Ingredient.belongsTo(Recipe, {
+    foreignKey: 'recipe_id'
+    // through: {
+    //     model: RecipeExtras,
+    //     unique: false
+    // }
 })
 
 // Relationship between Recipe and Instruction

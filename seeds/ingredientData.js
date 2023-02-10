@@ -2,17 +2,17 @@ const { Ingredient } = require('../models');
 
 const ingredientData = [
     {
-        ingredient: 'Chicken'
+      name: 'Chicken'
     },
     {
-        ingredient: 'Butter'
-    },
-    {
-        ingredient: 'Milk'
-    },
-    {
-        ingredient: 'Mustard'
-    }
+      name: 'Butter'
+     },
+     {
+       name: 'Milk'
+     },
+     {
+       name: 'Mustard'
+     }
 ]
 
 const seedIngredient = () => Ingredient.bulkCreate(ingredientData);
