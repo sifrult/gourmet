@@ -17,9 +17,21 @@ const ingredientData = [
        recipe_id: 1
      },
      {
-        name: 'Mustard', 
+        name: 'Mustard',
         recipe_id: 1
-     }
+     },
+     {
+      name: 'Baby bok choy',
+      recipe_id: 2
+     },
+     {
+      name: 'Cilantro',
+      recipe_id: 2
+     },
+     {
+      name: 'Garlic',
+      recipe_id: 2
+     },
 ]
 
 const seedIngredient = () => Ingredient.bulkCreate(ingredientData);

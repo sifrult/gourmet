@@ -5,6 +5,11 @@ const recipeData = [
         recipe_name: 'Honey Mustard Chicken',
         time: '30min',
         user_id: 1,
+    },
+    {
+        recipe_name: 'Naked Wonton Soup',
+        time: '30min',
+        user_id: 1,
     }
 ]
 
