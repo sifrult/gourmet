@@ -20,7 +20,7 @@ router.get('/', async (req, res) => {
 router.get('/recipe/:id', async (req, res) => {
   try {
     const recipeData = await Recipe.findByPk(req.params.id, {
-      include: [{ model: Ingredient }, { model: Tag }]
+      include: [{ model: Ingredient}, { model: Tag}]
     });
     const recipe = recipeData.get({ plain: true });
     console.log(recipe)
@@ -44,7 +44,7 @@ router.get('/login', async (req, res) => {
 router.get('/signUp', async (req, res) => {
   try {
     res.render('signUp');
-  } catch(err){
+  } catch (err) {
     res.status(500).json(err);
   }
 });

@@ -21,7 +21,7 @@ RecipeExtras.init({
     ingredient_id: {
         type: DataTypes.INTEGER,
         references: {
-          model: 'ingredients',
+          model: 'ingredient',
           key: 'id',
           unique: false
         }

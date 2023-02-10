@@ -16,33 +16,41 @@ Recipe.belongsTo(User, {
 });
 
 // Relationship between Recipe and Tag
-Recipe.belongsToMany(Tag, {
-    through: {
-        model: RecipeExtras,
-        unique: false
-    }
+// using foreignKey and hasMany/belongsTo rather than belongsToMany & through: 
+Recipe.hasMany(Tag, {
+    foreignKey: 'recipe_id',
+    onDelete: 'CASCADE'
+    // through: {
+    //     model: RecipeExtras,
+    //     unique: false
+    // }
 });
 
-Tag.belongsToMany(Recipe, {
-    through: {
-        model: RecipeExtras,
-        unique: false
-    }
+Tag.belongsTo(Recipe, {
+    foreignKey: 'recipe_id'
+    // through: {
+    //     model: RecipeExtras,
+    //     unique: false
+    // }
 });
 
 // Relationship between Recipe and Ingredient
-Recipe.belongsToMany(Ingredient, {
-    through: {
-        model: RecipeExtras,
-        unique: false
-    }
+// using foreignKey and hasMany/belongsTo rather than belongsToMany
+Recipe.hasMany(Ingredient, {
+    foreignKey: 'recipe_id',
+    onDelete: 'CASCADE'
+    // through: {
+    //     model: RecipeExtras,
+    //     unique: false
+    // }
 });
 
-Ingredient.belongsToMany(Recipe, {
-    through: {
-        model: RecipeExtras,
-        unique: false
-    }
+Ingredient.belongsTo(Recipe, {
+    foreignKey: 'recipe_id'
+    // through: {
+    //     model: RecipeExtras,
+    //     unique: false
+    // }
 })
 
 // Relationship between Recipe and Instruction

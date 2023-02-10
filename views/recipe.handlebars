@@ -1,4 +1,18 @@
 <section>
     <h3>{{recipe.recipe_name}}</h3>
-   <h4>{{recipe.ingredients}}</h4> 
+    <h4>Ingredients</h4>
+    <ul class="ingredients">
+        {{#each recipe.ingredients}}
+        <li>{{this.name}}</li>
+        {{/each}}
+    </ul>
+</section>
+
+<section>
+    <h4>Tags</h4>
+    <ul class="tags">
+        {{#each recipe.tags}}
+        <li>{{this.tag_name}}</li>
+        {{/each}}
+    </ul>
 </section>
