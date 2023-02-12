@@ -4,8 +4,12 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    const recipeData = await Recipe.findAll()
+    const recipeData = await Recipe.findAll({
+      where: {user_id: 1},
+      include: [{model: User}]
+    })
     const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
+console.log(recipes)
     res.render('homepage', {
       recipes,
       loggedIn: req.session.loggedIn
