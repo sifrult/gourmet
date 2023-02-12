@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
       include: [{model: User}]
     })
     const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
-console.log(recipes)
+
     res.render('homepage', {
       recipes,
       loggedIn: req.session.loggedIn
@@ -22,12 +22,13 @@ console.log(recipes)
 router.get('/myRecipes', withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {
+      where: {user_id: req.session.user_id},
       attributes: {exclude: ['password']},
       include: [{model: Recipe}],
     });
 
     const user = userData.get({plain: true});
-
+console.log(user)
     console.log(user);
     res.render('myRecipes', {
       ...user,
