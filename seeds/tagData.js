@@ -9,7 +9,8 @@ const tagData = [
         recipe_id: 1
     },
     {
-        tag_name: 'Pork'
+        tag_name: 'Pork',
+        recipe_id: 2
     },
     {
         tag_name: 'Vegetarian',

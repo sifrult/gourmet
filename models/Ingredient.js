@@ -17,8 +17,12 @@ Ingredient.init({
     },
     recipe_id: {
         type: DataTypes.INTEGER,
-        references: { model: 'recipe', key: 'id' }
-    }
+        references: {
+          model: 'recipe',
+          key: 'id',
+          unique: false
+        }
+    },
 },
     {
         sequelize,
