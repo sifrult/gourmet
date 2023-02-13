@@ -21,7 +21,7 @@ Tag.init(
           key: 'id',
           unique: false
         }
-    },
+      },
     },
     {
       sequelize,
