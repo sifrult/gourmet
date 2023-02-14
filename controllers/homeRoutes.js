@@ -28,7 +28,7 @@ router.get('/myRecipes', withAuth, async (req, res) => {
     });
 
     const user = userData.get({plain: true});
-console.log(user)
+
     console.log(user);
     res.render('myRecipes', {
       ...user,
