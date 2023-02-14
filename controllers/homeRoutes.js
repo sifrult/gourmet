@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Recipe, Ingredient, Tag , User} = require('../models');
+const { Recipe, Ingredient, Tag , User, Instruction} = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -24,9 +24,11 @@ router.get('/myRecipes', withAuth, async (req, res) => {
     const recipeData = await Recipe.findAll({
       where: {user_id: req.session.user_id},
 
-    const user = userData.get({plain: true});
+      include: [{model: User, attributes: {exclude: ['password']}}]
+    })
+    const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
 
-    console.log(user);
+    console.log(recipes)
 
     res.render('myRecipes', {
       recipes,
@@ -40,9 +42,11 @@ router.get('/myRecipes', withAuth, async (req, res) => {
 router.get('/recipe/:id', withAuth, async (req, res) => {
   try {
     const recipeData = await Recipe.findByPk(req.params.id, {
-      include: [{model: Ingredient}, {model: Tag}]
+      include: [{model: Ingredient}, {model: Tag}, {model: Instruction}]
     });
     const recipe = recipeData.get({ plain: true });
+
+    console.log(recipe)
 
     res.render('recipe', {
       recipe,

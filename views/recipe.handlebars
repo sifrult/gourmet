@@ -1,5 +1,3 @@
-
-
 <section>
     <h3 id="recipe_name">{{recipe.recipe_name}}</h3>
     <p>Cook time: <span id="recipe_time">{{recipe.time}}</span></p>
@@ -19,6 +17,11 @@
         <li>{{this.tag_name}}</li>
         {{/each}}
     </ul>
+</section>
+
+<section>
+    <h4>Instructions</h4>
+    <p>{{recipe.instruction.instruction}}</p>
 </section>
 
 <script src="/js/favorite.js"></script>
