@@ -51,7 +51,7 @@ router.get('/recipe/:id', withAuth, async (req, res) => {
     });
 
     const recipe = recipeData.get({ plain: true });
-
+    console.log(recipe);
 
     res.render('recipe', {
       recipe,
