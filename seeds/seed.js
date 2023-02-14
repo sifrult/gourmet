@@ -5,7 +5,7 @@ const seedRecipe = require('./recipeData');
 const seedTag = require('./tagData');
 const seedIngredient = require('./ingredientData');
 const seedInstruction = require('./instructionData');
-const seedRecipeExtras = require('./recipeExtrasData');
+const seedImage = require('./imageData');
 
 const seedAll = async () => {
   await sequelize.sync({ force: true});
@@ -20,7 +20,7 @@ const seedAll = async () => {
 
   await seedInstruction();
 
-  await seedRecipeExtras();
+  await seedImage();
 
   process.exit(0);
 }
