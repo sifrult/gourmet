@@ -56,3 +56,4 @@ Image.hasOne(Recipe, {
 });
 
 module.exports = { User, Tag, Recipe, Ingredient, Instruction, Image};
+
