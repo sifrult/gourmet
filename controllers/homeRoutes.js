@@ -45,7 +45,9 @@ router.get('/recipe/:id', withAuth, async (req, res) => {
       include: [{model: Ingredient}, {model: Tag}, {model: Instruction}]
     });
     const recipe = recipeData.get({ plain: true });
+
     console.log(recipe)
+
     res.render('recipe', {
       recipe,
       loggedIn: req.session.loggedIn
