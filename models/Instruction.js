@@ -11,7 +11,7 @@ Instruction.init({
         autoIncrement: true
     },
     instruction: {
-        type: DataTypes.STRING,
+        type: DataTypes.JSON,
         allowNull: false,
     },
     },

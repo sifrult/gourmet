@@ -12,7 +12,6 @@ router.get('/', async (req, res) => {
     })
     const recipe = recipeData.map((recipe) => recipe.get({ plain: true }));
 
-    console.log(recipe)
 
     res.render('homepage', {
       recipe,
@@ -31,9 +30,9 @@ router.get('/myRecipes', withAuth, async (req, res) => {
       include: [{model: User, attributes: {exclude: ['password']}}]
     })
 
+
     const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
-
-
+    
     res.render('myRecipes', {
       recipes,
       loggedIn: true
