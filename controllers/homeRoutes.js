@@ -29,6 +29,7 @@ router.get('/myRecipes', withAuth, async (req, res) => {
     const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
 
     console.log(recipes)
+
     res.render('myRecipes', {
       recipes,
       loggedIn: true
