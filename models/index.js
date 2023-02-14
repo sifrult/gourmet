@@ -45,6 +45,7 @@ Instruction.hasOne(Recipe, {
     foreignKey: 'recipe_id'
 });
 
+
 // Relationship between Recipe and Image
 Recipe.hasOne(Image, {
     foreignKey: 'recipe_id',
@@ -56,3 +57,4 @@ Image.hasOne(Recipe, {
 });
 
 module.exports = { User, Tag, Recipe, Ingredient, Instruction, Image};
+
