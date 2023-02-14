@@ -1,3 +1,11 @@
 My Recipes
 <br>My id is: {{id}}
 <br> My username is {{username}}
+
+<br>
+{{#each recipes as |recipe|}}
+
+<p><a href="/recipe/{{recipe.id}}">{{recipe.recipe_name}}</a></p>
+
+{{/each}}
+
