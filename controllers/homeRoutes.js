@@ -63,6 +63,14 @@ router.get('/recipe/:id', withAuth, async (req, res) => {
   }
 });
 
+router.get('/recipeInput', async (req, res) => {
+  try {
+    res.render('recipeInput');
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.get('/login', async (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/');
