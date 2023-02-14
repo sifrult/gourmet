@@ -23,10 +23,12 @@ router.get('/myRecipes', withAuth, async (req, res) => {
   try {
     const recipeData = await Recipe.findAll({
       where: {user_id: req.session.user_id},
+
       include: [{model: User, attributes: {exclude: ['password']}}]
     })
 
     const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
+
 
     res.render('myRecipes', {
       recipes,
