@@ -45,6 +45,7 @@ Instruction.hasOne(Recipe, {
     foreignKey: 'recipe_id'
 });
 
+
 // Relationship between Recipe and Image
 Recipe.hasOne(Image, {
     foreignKey: 'recipe_id',
