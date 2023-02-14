@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Instruction extends Model {}
+class Instruction extends Model { }
 
 Instruction.init({
     id: {
@@ -14,7 +14,15 @@ Instruction.init({
         type: DataTypes.JSON,
         allowNull: false,
     },
+    recipe_id: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: 'recipe',
+            key: 'id',
+            unique: false
+        }
     },
+},
     {
         sequelize,
         timestamps: false,
