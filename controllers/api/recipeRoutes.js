@@ -22,9 +22,11 @@ router.post('/newRecipe', withAuth, async (req, res) => {
     });
     const newIngredient = await Ingredient.create({
       ...req.body,
+      recipe_id : newRecipe.id
     });
     const newInstruction = await Instruction.create({
       ...req.body,
+      recipe_id: newRecipe.id
     })
     res.status(200).json(newRecipe, newIngredient, newInstruction);
   } catch (err) {
