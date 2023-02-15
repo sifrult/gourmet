@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Recipe, Ingredient, Instruction } = require('../../models/');
 const withAuth = require('../../utils/auth');
 
-router.post('/', withAuth, async (req, res) => {
+router.post('/favorite', withAuth, async (req, res) => {
     try{
         const newRecipe = await Recipe.create({
             ...req.body,

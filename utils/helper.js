@@ -8,5 +8,11 @@ module.exports = {
       if (string1 !== string2) {
         return options.fn(this);
       }
+    },
+
+    recipeEquals: (string1, string2, options) => {
+      if (string1 == string2) {
+        return options.fn(this)
+      }
     }
   };
