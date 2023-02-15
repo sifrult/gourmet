@@ -5,31 +5,11 @@ recipe_id of the recipe we want to display it on */
 
 const ingredientData = [
     {
-      ingredient: 'Chicken',
+      ingredient: ['Chicken', 'butter', 'milk'],
       recipe_id: 1
     },
-    {
-      ingredient: 'Butter',
-      recipe_id: 1
-     },
      {
-       ingredient: 'Milk',
-       recipe_id: 1
-     },
-     {
-        ingredient: 'Mustard',
-        recipe_id: 1
-     },
-     {
-      ingredient: 'Baby bok choy',
-      recipe_id: 2
-     },
-     {
-      ingredient: 'Cilantro',
-      recipe_id: 2
-     },
-     {
-      ingredient: 'Garlic',
+      ingredient: ['Baby bok choy', 'cilantro', 'garlic'],
       recipe_id: 2
      },
 ]
