@@ -2,7 +2,11 @@
     <img src="{{recipe.image.url}}">
     <h3 id="recipe_name">{{recipe.recipe_name}}</h3>
     <p>Cook time: <span id="recipe_time">{{recipe.time}}</span></p>
+
+    {{#equals recipe.user_id user_id }}
     <a href="#" id="favorite">Favorite</a>
+    {{/equals}}
+
     <h4>Ingredients</h4>
     <ul class="ingredients">
         {{#each recipe.ingredient.ingredient}}

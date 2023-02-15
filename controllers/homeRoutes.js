@@ -1,8 +1,8 @@
 const router = require('express').Router();
-
 const { Recipe, Ingredient, Tag , User, Instruction, Image} = require('../models');
-
 const withAuth = require('../utils/auth');
+
+
 
 router.get('/', async (req, res) => {
   try {
@@ -30,12 +30,11 @@ router.get('/myRecipes', withAuth, async (req, res) => {
       include: [{model: User, attributes: {exclude: ['password']}}]
     })
 
-
     const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
-    
+
     res.render('myRecipes', {
       recipes,
-      loggedIn: true
+      loggedIn: true,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -45,17 +44,15 @@ router.get('/myRecipes', withAuth, async (req, res) => {
 router.get('/recipe/:id', withAuth, async (req, res) => {
   try {
     const recipeData = await Recipe.findByPk(req.params.id, {
-
       include: [{model: Ingredient}, {model: Tag}, {model: Instruction}, {model: Image}]
-
     });
 
     const recipe = recipeData.get({ plain: true });
-    console.log(recipe);
-
+    console.log(recipe)
     res.render('recipe', {
       recipe,
-      loggedIn: req.session.loggedIn
+      loggedIn: req.session.loggedIn,
+      user_id: req.session.user_id,
     });
   }
   catch (err) {
