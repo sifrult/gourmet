@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Recipe, Ingredient, Instruction } = require('../../models/');
+const { Recipe, Ingredient, Instruction, Image} = require('../../models/');
 const withAuth = require('../../utils/auth');
 
 router.post('/favorite', withAuth, async (req, res) => {
@@ -28,7 +28,11 @@ router.post('/newRecipe', withAuth, async (req, res) => {
       ...req.body,
       recipe_id: newRecipe.id
     })
-    res.status(200).json(newRecipe, newIngredient, newInstruction);
+    const newImage = await Image.create({
+      ...req.body,
+      recipe_id: newRecipe.id
+    })
+    res.status(200).json(newRecipe, newIngredient, newImage);
   } catch (err) {
     res.status(400).json(err)
   }
