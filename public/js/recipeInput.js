@@ -22,5 +22,5 @@ const recipeInputHandler = async (event) => {
 };
 
 document
-  .querySelector('.button')
+  .querySelector('#button')
   .addEventListener('click', recipeInputHandler);
