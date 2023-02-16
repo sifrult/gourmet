@@ -1,5 +1,4 @@
 const User = require('./User');
-const Tag = require('./Tag');
 const Recipe = require('./Recipe');
 const Ingredient = require('./Ingredient');
 const Instruction = require('./Instruction');
@@ -13,16 +12,6 @@ User.hasMany(Recipe, {
 
 Recipe.belongsTo(User, {
     foreignKey: 'user_id'
-});
-
-// Relationship between Recipe and Tag
-Recipe.hasMany(Tag, {
-    foreignKey: 'recipe_id',
-    onDelete: 'CASCADE'
-});
-
-Tag.belongsTo(Recipe, {
-    foreignKey: 'recipe_id'
 });
 
 // Relationship between Recipe and Ingredient
@@ -45,7 +34,6 @@ Instruction.hasOne(Recipe, {
     foreignKey: 'recipe_id'
 });
 
-
 // Relationship between Recipe and Image
 Recipe.hasOne(Image, {
     foreignKey: 'recipe_id',
@@ -56,4 +44,4 @@ Image.hasOne(Recipe, {
     foreignKey: 'recipe_id'
 });
 
-module.exports = { User, Tag, Recipe, Ingredient, Instruction, Image};
+module.exports = { User, Recipe, Ingredient, Instruction, Image};

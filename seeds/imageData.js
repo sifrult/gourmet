@@ -6,7 +6,7 @@ const imageData = [
         recipe_id: 1
     },
     {
-        url: 'https://media.istockphoto.com/id/1352552176/photo/homemade-asian-chicken-wonton-soup.jpg?s=612x612&w=0&k=20&c=Tqy8RCKLH87hxAVxKM-z7KWNSUhMELWB78-1NdsjP5w=',
+        url: 'https://cdn-uploads.mealime.com/uploads/recipe/thumbnail/1200/presentation_ec6d060e-9a5a-4225-9746-5dc1c46b840b.jpeg',
         recipe_id: 2
     }
 ]
