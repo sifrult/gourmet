@@ -2,17 +2,16 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    row-gap: 50px;
+    row-gap: 35px;
     width: 90%;
     margin: auto;
-    margin-top: 50px;
+    margin-top: 35px;
   }
 
   #card {
     width: 30%;
     background-color: #F4EFE9;
     object-fit: cover;
-
   }
 
   #card-header-title {
@@ -27,4 +26,11 @@
   #recipe_input {
     text-align: center;
     font-size: 20px;
+  }
+
+  .image {
+    object-fit: contain;
+    width: 100%;
+    height: 200px;
+
   }
