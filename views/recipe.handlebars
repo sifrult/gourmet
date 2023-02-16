@@ -5,8 +5,8 @@
     <a href="#" id="favorite">Favorite</a>
     <h4>Ingredients</h4>
     <ul class="ingredients">
-        {{#each recipe.ingredients}}
-        <li>{{this.name}}</li>
+        {{#each recipe.ingredient.ingredient}}
+        <li>{{this}}</li>
         {{/each}}
     </ul>
 </section>

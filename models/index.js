@@ -26,12 +26,12 @@ Tag.belongsTo(Recipe, {
 });
 
 // Relationship between Recipe and Ingredient
-Recipe.hasMany(Ingredient, {
+Recipe.hasOne(Ingredient, {
     foreignKey: 'recipe_id',
     onDelete: 'CASCADE'
 });
 
-Ingredient.belongsTo(Recipe, {
+Ingredient.hasOne(Recipe, {
     foreignKey: 'recipe_id'
 });
 
@@ -57,4 +57,3 @@ Image.hasOne(Recipe, {
 });
 
 module.exports = { User, Tag, Recipe, Ingredient, Instruction, Image};
-
