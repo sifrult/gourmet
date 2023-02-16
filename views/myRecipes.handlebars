@@ -1,14 +1,14 @@
 <section id="cards">
     {{#each recipes as |recipe|}}
     <div class="card" id="card">
-        <div class="card-header-title" id="card-header-title">
+        <div class="card-header-title card-equal-height" id="card-header-title">
             <a href="/recipe/{{recipe.recipe_name}}">{{recipe.recipe_name}}</a>
 
             <a href="#" data-recipe-name="{{recipe.recipe_name}}" class="delete">Delete</a>
         </div>
-        <div >
+        <figure class="image is-1by1">
             <a href="/recipe/{{recipe.recipe_name}}"><img src="{{recipe.image.url}}"></a>
-        </div>
+        </figure>
     </div>
     {{/each}}
 </section>
