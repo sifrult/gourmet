@@ -4,12 +4,12 @@ const recipeInputHandler = async (event) => {
   const recipe_name = document.querySelector('#recipe_title').value.trim();
   const ingredient = document.querySelector('#ingredients').value.trim().split("\n");
   const instruction = document.querySelector('#instructions').value.trim().split("\n");
+  const url = document.querySelector('#recipe_url').value.trim();
 
-  console.log(ingredient, instruction)
-  if (recipe_name && ingredient && instruction) {
+  if (recipe_name && ingredient && instruction, url) {
     const response = await fetch('/api/recipes/newRecipe', {
       method: 'POST',
-      body: JSON.stringify({ recipe_name, ingredient, instruction }),
+      body: JSON.stringify({ recipe_name, ingredient, instruction, url}),
       headers: { 'Content-Type': 'application/json' },
     });
     if (response.ok) {
