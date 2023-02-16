@@ -2,9 +2,9 @@ const { Recipe } = require('../models');
 
 const recipeData = [
     {
-        recipe_name: 'Honey Mustard Chicken',
-        time: '30min',
-        user_id: 1,
+        recipe_name: 'Cheesy Vegetarian Sheet Pan Pasta',
+        time: '30 minutes',
+        user_id: 1
     },
     {
         recipe_name: 'Naked Wonton Soup',

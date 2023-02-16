@@ -1,12 +1,12 @@
 <section id="cards">
     {{#each recipe as |recipe|}}
-    <div class="card" id="card">
+    <div class="card card-equal-height" id="card">
         <div class="card-header-title">
             <a href="/recipe/{{recipe.recipe_name}}">{{recipe.recipe_name}}</a>
         </div>
-        <div >
+        <figure class="image is-1by1" >
             <a href="/recipe/{{recipe.recipe_name}}"><img src="{{recipe.image.url}}"></a>
-        </div>
+        </figure>
     </div>
     {{/each}}
 </section>
