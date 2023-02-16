@@ -1,15 +1,15 @@
-<div class="column is-half is-offset-one-quarter">
+<div class="column is-half is-offset-one-quarter" id="main-card">
     <div class="card">
         <div class="card-content is-vcentered">
-            <div class="card-header-title" id="recipe_name">
+            <div class="card-header-title is-size-2" id="recipe_name" >
                 {{recipe.recipe_name}}
             </div>
-            <div class="card-content">
-                <img src="{{recipe.image.url}}">
-                <p class="card-content"><strong>Cook time:</strong><span id="recipe_time">{{recipe.time}}</span></p>
+            <div class="card-content"><div >
+                <img id="recipe_img" src="{{recipe.image.url}}" ></div>
+                <p class="card-content"><strong>Cook time:</strong><span id="recipe_time"> {{recipe.time}}</span></p>
                 <a href="#" id="favorite" class="button is-info card-content">Favorite</a>
                 <div class="card-content">
-                    <h4><strong>Ingredients</strong></h4>
+                    <h4 class="is-size-4"><strong>Ingredients</strong></h4>
                     <ul class="ingredients">
                         {{#each recipe.ingredient.ingredient}}
                         <li>{{this}}</li>
@@ -17,10 +17,12 @@
                     </ul>
                 </div>
                 <div class="card-content">
-                    <h4><strong>Instructions</strong></h4>
+                    <h4 class="is-size-4"><strong>Instructions</strong></h4>
                     <div>
                         {{#each recipe.instruction.instruction}}
-                        <p>{{this}}</p>
+
+                            <br>{{this}}<br>
+
                         {{/each}}
                     </div>
                 </div>

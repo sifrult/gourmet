@@ -8,7 +8,11 @@ const imageData = [
     {
         url: 'https://cdn-uploads.mealime.com/uploads/recipe/thumbnail/1200/presentation_ec6d060e-9a5a-4225-9746-5dc1c46b840b.jpeg',
         recipe_id: 2
-    }
+    },
+    {
+        url: 'https://cdn-uploads.mealime.com/uploads/recipe_variant/thumbnail/2272/presentation_7547932d-be51-4f4b-9365-2adb80795311.jpg',
+        recipe_id: 3
+    },
 ]
 
 

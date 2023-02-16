@@ -8,7 +8,7 @@ const ingredientData = [
       ingredient: ['Chicken', 'butter', 'milk'],
       recipe_id: 1
     },
-     {
+    {
       ingredient: [
         '8 baby bok choy',
         '7 cups chicken or vegetable broth',
@@ -25,7 +25,22 @@ const ingredientData = [
         'worcestershire sauce'
       ],
       recipe_id: 2
-     },
+    },
+    {
+      ingredient: [
+          '4 crowns broccoli',
+          '2 cloves garlic',
+          '2 pieces ginger root',
+          '1 medium red onion',
+          '1.5 lb striploin steak',
+          'black pepper',
+          'crushed red pepper',
+          'soy sauce',
+          'toasted sesame oil',
+          'virgin coconut oil'
+      ],
+      recipe_id: 3
+  },
 ]
 
 const seedIngredient = () => Ingredient.bulkCreate(ingredientData);

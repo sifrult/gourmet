@@ -20,7 +20,20 @@ const instructionData = [
             'Return soup to a simmer and cook until bok choy is tender, 4-5 minutes more.'
         ],
         recipe_id: 2
-    }
+    },
+    {
+        instruction: [
+            'Wash broccoli. Separate into bite-sized florets and cut stems into smaller pieces. Transfer to a plate.',
+            'Heat a skillet over medium-high heat.',
+            'Peel and thinly slice onion into half rings. Peel and mince garlic. Peel and mince or grate ginger.',
+            'Thinly slice steak against the grain into strips.',
+            'Coat bottom of skillet with 1T coconut oil. Add steak and stir fry until browned, 2-3 minutes. Transfer to a plate.',
+            'Coat skillet with more oil (1T), then add onion, garlic, ginger, and crushed red pepper. Stir fry until onion is softened, 3-4 minutes.',
+            'Add broccoli and stir fry until bright green and tender-crisp, 4-5 minutes.',
+            'Add steak, 4T soy sauce, 1T sesame oil, and pepper; toss to combine.'
+        ],
+        recipe_id: 3
+    },
 
 ]
 
