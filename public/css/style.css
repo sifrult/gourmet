@@ -7,11 +7,22 @@
     margin: auto;
     margin-top: 50px;
   }
-  
+
   #card {
     width: 30%;
+    background-color: #F4EFE9;
+    object-fit: cover;
   }
 
-  #images {
-    width: 30%;
+  #card-header-title {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #main-card {
+    margin: auto;
+  }
+
+  #recipe-name {
+    font-size: 30px;
   }

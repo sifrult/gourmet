@@ -7,6 +7,10 @@ router.post('/favorite', withAuth, async (req, res) => {
         const newRecipe = await Recipe.create({
             ...req.body,
             user_id: req.session.user_id
+        });
+        const newImage = await Image.create({
+          ...req.body,
+          recipe_id: newRecipe.id
         })
         res.status(200).json(newRecipe);
     } catch (err) {
@@ -40,11 +44,11 @@ router.post('/newRecipe', withAuth, async (req, res) => {
   }
 })
 
-router.delete('/:id', withAuth, async (req, res) => {
+router.delete('/:recipe_name', withAuth, async (req, res) => {
     try {
       const recipeData = await Recipe.destroy({
         where: {
-          id: req.params.id,
+          recipe_name: req.params.recipe_name,
           user_id: req.session.user_id,
         },
       });
