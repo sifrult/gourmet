@@ -1,17 +1,15 @@
 const router = require('express').Router();
-const { Recipe, Ingredient, Tag , User, Instruction, Image} = require('../models');
+const { Recipe, Ingredient, User, Instruction, Image, RecipeTag} = require('../models');
 const withAuth = require('../utils/auth');
-
-
 
 router.get('/', async (req, res) => {
   try {
     const recipeData = await Recipe.findAll({
       where: {user_id: 1},
-      include: [ {model: Image}]
+      include: [ {model: Image} ],
     })
-    const recipe = recipeData.map((recipe) => recipe.get({ plain: true }));
 
+    const recipe = recipeData.map((recipe) => recipe.get({ plain: true }));
 
     res.render('homepage', {
       recipe,
@@ -48,17 +46,15 @@ router.get('/recipe/:recipe_name', withAuth, async (req, res) => {
         where: { recipe_name: req.params.recipe_name },
 
 
-      include: [{model: Ingredient}, {model: Tag}, {model: Instruction}, {model: Image}]
+      include: [{model: Ingredient}, {model: Instruction}, {model: Image}]
     });
 
     if (!recipeData) {
-      // handle the case where the recipe doesn't exist
       res.sendStatus(404);
       return;
     }
 
     const recipe = recipeData.get({ plain: true });
-
     console.log(recipe)
     res.render('recipe', {
       recipe,
