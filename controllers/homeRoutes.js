@@ -1,17 +1,15 @@
 const router = require('express').Router();
-
-const { Recipe, Ingredient, Tag , User, Instruction, Image} = require('../models');
-
+const { Recipe, Ingredient, User, Instruction, Image, RecipeTag} = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
     const recipeData = await Recipe.findAll({
       where: {user_id: 1},
-      include: [ {model: Image}]
+      include: [ {model: Image} ],
     })
-    const recipe = recipeData.map((recipe) => recipe.get({ plain: true }));
 
+    const recipe = recipeData.map((recipe) => recipe.get({ plain: true }));
 
     res.render('homepage', {
       recipe,
@@ -30,35 +28,40 @@ router.get('/myRecipes', withAuth, async (req, res) => {
       include: [{model: User, attributes: {exclude: ['password']}}]
     })
 
-
     const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
-    
+
     res.render('myRecipes', {
       recipes,
-      loggedIn: true
+      loggedIn: true,
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.get('/recipe/:id', withAuth, async (req, res) => {
+router.get('/recipe/:recipe_name', withAuth, async (req, res) => {
   try {
-    const recipeData = await Recipe.findByPk(req.params.id, {
+    const recipeData = await Recipe.findOne(
+      {
+        where: { recipe_name: req.params.recipe_name },
 
-      include: [{model: Ingredient}, {model: Tag}, {model: Instruction}, {model: Image}]
 
+      include: [{model: Ingredient}, {model: Instruction}, {model: Image}]
     });
+
+    if (!recipeData) {
+      res.sendStatus(404);
+      return;
+    }
 
     const recipe = recipeData.get({ plain: true });
-    console.log(recipe);
-
+    console.log(recipe)
     res.render('recipe', {
       recipe,
-      loggedIn: req.session.loggedIn
+      loggedIn: req.session.loggedIn,
+      user_id: req.session.user_id,
     });
-  }
-  catch (err) {
+  } catch (err) {
     res.status(500).json(err);
   }
 });

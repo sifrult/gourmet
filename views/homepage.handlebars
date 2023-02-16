@@ -1,7 +1,12 @@
-homepage
-<p>
-{{#each recipe as |recipe|}}
-<img src="{{recipe.image.url}}">
-<p><a href="/recipe/{{recipe.id}}">{{recipe.recipe_name}}</a></p>
-{{/each}}
-</p>
+<section id="cards">
+    {{#each recipe as |recipe|}}
+    <div class="card" id="card">
+        <div class="card-header-title">
+            <a href="/recipe/{{recipe.recipe_name}}">{{recipe.recipe_name}}</a>
+        </div>
+        <div id="images">
+            <a href="/recipe/{{recipe.recipe_name}}"><img src="{{recipe.image.url}}"></a>
+        </div>
+    </div>
+    {{/each}}
+</section>

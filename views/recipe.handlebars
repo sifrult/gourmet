@@ -1,33 +1,31 @@
-<section>
-    <img src="{{recipe.image.url}}">
-    <h3 id="recipe_name">{{recipe.recipe_name}}</h3>
-    <p>Cook time: <span id="recipe_time">{{recipe.time}}</span></p>
-    <a href="#" id="favorite">Favorite</a>
-    <h4>Ingredients</h4>
-    <ul class="ingredients">
-        {{#each recipe.ingredients}}
-        <li>{{this.name}}</li>
-        {{/each}}
-    </ul>
-</section>
-
-
-<section>
-    <h4>Tags</h4>
-    <ul class="tags">
-        {{#each recipe.tags}}
-        <li>{{this.tag_name}}</li>
-        {{/each}}
-    </ul>
-</section>
-
-<section>
-    <h4>Instructions</h4>
-
-    {{#each recipe.instruction.instruction}}
-    <p>{{this}}</p>
-    {{/each}}
-
-</section>
-
+<div class="column is-half is-offset-one-quarter">
+    <div class="card">
+        <div class="card-content is-vcentered">
+            <div class="card-header-title" id="recipe_name">
+                {{recipe.recipe_name}}
+            </div>
+            <div class="card-content">
+                <img src="{{recipe.image.url}}">
+                <p class="card-content"><strong>Cook time:</strong><span id="recipe_time">{{recipe.time}}</span></p>
+                <a href="#" id="favorite" class="button is-info card-content">Favorite</a>
+                <div class="card-content">
+                    <h4><strong>Ingredients</strong></h4>
+                    <ul class="ingredients">
+                        {{#each recipe.ingredient.ingredient}}
+                        <li>{{this}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+                <div class="card-content">
+                    <h4><strong>Instructions</strong></h4>
+                    <div>
+                        {{#each recipe.instruction.instruction}}
+                        <p>{{this}}</p>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <script src="/js/favorite.js"></script>

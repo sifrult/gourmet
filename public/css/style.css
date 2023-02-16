@@ -1,0 +1,17 @@
+#cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 50px;
+    width: 90%;
+    margin: auto;
+    margin-top: 50px;
+  }
+  
+  #card {
+    width: 30%;
+  }
+
+  #images {
+    width: 30%;
+  }

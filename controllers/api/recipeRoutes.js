@@ -1,8 +1,8 @@
 const router = require('express').Router();
-const { Recipe, Ingredient, Instruction } = require('../../models/');
+const { Recipe, Ingredient, Instruction, Image} = require('../../models/');
 const withAuth = require('../../utils/auth');
 
-router.post('/', withAuth, async (req, res) => {
+router.post('/favorite', withAuth, async (req, res) => {
     try{
         const newRecipe = await Recipe.create({
             ...req.body,
@@ -17,16 +17,24 @@ router.post('/', withAuth, async (req, res) => {
 router.post('/newRecipe', withAuth, async (req, res) => {
   try {
     const newRecipe = await Recipe.create({
-      ...req.body,
+      recipe_name: req.body.recipe_name,
+      time: req.body.time,
       user_id: req.session.user_id
     });
     const newIngredient = await Ingredient.create({
       ...req.body,
+      recipe_id : newRecipe.id
     });
     const newInstruction = await Instruction.create({
       ...req.body,
+      recipe_id: newRecipe.id
     })
-    res.status(200).json(newRecipe, newIngredient, newInstruction);
+    const newImage = await Image.create({
+      ...req.body,
+      recipe_id: newRecipe.id
+    })
+
+    res.status(200).json(newRecipe, newIngredient, newImage, newInstruction);
   } catch (err) {
     res.status(400).json(err)
   }
