@@ -5,7 +5,7 @@ const addFavorite = async (event) => {
     const time = document.querySelector('#recipe_time').textContent.trim();
 
     if (recipe_name && time) {
-        const response = await fetch(`/api/recipes/`, {
+        const response = await fetch(`/api/recipes/favorite`, {
             method: 'POST',
             body: JSON.stringify({recipe_name, time}),
             headers: {
