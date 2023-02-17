@@ -24,8 +24,6 @@ We designed the site with the MVC framework in mind, in hopes of learning more a
 
 ## Usage
 
-Visit the site at [this link](github.pages_link)
-
 You must create a user account to access the library of recipes, as well as adding and saving your favorites.
 ![Sign Up for Account](./assets/images/homepage_user_buttons.png)
 
