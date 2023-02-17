@@ -2,7 +2,7 @@
 
 ## About
 
-Gourmet is a recipe sharing website that allows users to create their own personalized cookbook. Save recipes you love, share new ideas with friends, or add something new that you'd like to try! 
+Gourmet is a recipe sharing website that allows users to create their own personalized cookbook. Save recipes you love, share new ideas with friends, or add something new that you'd like to try! To view deployed code, click <a href="https://salty-oasis-46016.herokuapp.com/">here</a>.
 
 
 ## Motivation 💡
