@@ -3,11 +3,12 @@ const addFavorite = async (event) => {
 
     const recipe_name = document.querySelector('#recipe_name').textContent.trim();
     const time = document.querySelector('#recipe_time').textContent.trim();
+    const url = document.getElementById('recipe_img').src;
 
-    if (recipe_name && time) {
+    if (recipe_name && time && url) {
         const response = await fetch(`/api/recipes/favorite`, {
             method: 'POST',
-            body: JSON.stringify({recipe_name, time}),
+            body: JSON.stringify({recipe_name, time, url}),
             headers: {
                 'Content-Type': 'application/json',
               },

@@ -1,11 +1,20 @@
-My Recipes
-<p><a href="/recipeInput">Input your own recipe</a></p>
-{{#each recipes as |recipe|}}
+<div id="recipe_input">
+<a href="/recipeInput" >Input your own recipe</a>
+</div>
+<section id="cards">
+    {{#each recipes as |recipe|}}
+    <div class="card" id="card">
+        <div class="card-header-title card-equal-height" id="card-header-title">
+            <a href="/recipe/{{recipe.recipe_name}}">{{recipe.recipe_name}}</a>
 
-<p><a href="/recipe/{{recipe.recipe_name}}">{{recipe.recipe_name}}</a></p>
+            <a href="#" data-recipe-name="{{recipe.recipe_name}}" class="delete">Delete</a>
+        </div>
+        <figure class="image is-1by1">
+            <a href="/recipe/{{recipe.recipe_name}}"><img src="{{recipe.image.url}}"></a>
+        </figure>
+    </div>
+    {{/each}}
+</section>
 
-<a href="#" data-id="{{recipe.id}}" class="delete">Delete</a>
-
-{{/each}}
 
 <script src="/js/delete.js"></script>
